@@ -18,7 +18,7 @@ public class Shop : MonoBehaviour
 	public Button prefab;
 
 	public GameObject ShopButton;
-	public GameObject BuyButton;
+	public Button BuyButton;
 	public TMPro.TMP_InputField Description;
 
 	private void Start()
@@ -43,7 +43,7 @@ public class Shop : MonoBehaviour
 
 	private void OpenShop()
 	{
-		BuyButton.SetActive(true);
+		BuyButton.gameObject.SetActive(true);
 		Description.gameObject.SetActive(true);
 		for (int i = 0; i < data.Count; i++)
 		{
@@ -74,7 +74,7 @@ public class Shop : MonoBehaviour
 
 	private void CloseShop()
 	{
-		BuyButton.SetActive(false);
+		BuyButton.gameObject.SetActive(false);
 		Description.gameObject.SetActive(false);
 		foreach (var item in shopItems)
 		{

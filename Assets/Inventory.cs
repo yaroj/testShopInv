@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	private int coins;
+	public bool TakeCoins(int count)
+	{
+		if(coins >= count)
+		{
+			coins -= count;
+			return true;
+		}
+		return false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	}
+
+
 }
