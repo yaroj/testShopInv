@@ -64,8 +64,12 @@ public class Shop : MonoBehaviour
 	}
 	private Button CreateItemUI(ItemData itemData)
 	{
-		var item = Instantiate(prefab, transform);
-		return item;
+		var itemButton = Instantiate(prefab, transform);
+		itemButton.image.sprite = itemData.icon;
+		itemButton.name = itemData.itemName;
+		var textComponent = itemButton.GetComponentInChildren<TMPro.TextMeshProUGUI>();
+		textComponent.text = itemData.itemName;
+		return itemButton;
 	}
 
 	private void CloseShop()
