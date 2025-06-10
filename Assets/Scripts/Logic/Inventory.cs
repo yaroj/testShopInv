@@ -71,22 +71,6 @@ public class Inventory : MonoBehaviour
 		return false;
 
 	}
-
-	public void ToggleVisibility()
-	{
-		isOpened = !isOpened;
-
-		if (isOpened)
-		{
-			OpenInventory();
-		}
-		else
-		{
-			CloseInventory();
-		}
-
-	}
-
 	public void OpenInventory()
 	{
 		shownItems.Clear();
@@ -115,30 +99,3 @@ public class Inventory : MonoBehaviour
 		shownItems.Clear();
 	}
 }
-/* 
- * Create a small Shop + Inventory System in Unity.
-The player should be able to:
-View a list of items available for purchase (with name, icon, description, and price)
-Purchase an item
-View the items collected in their personal inventory
-📦 Requirements
-The shop items must be easy to configure and reusable
-The system should be structured in a way that allows different item types or behaviors to be added in the future
-The UI must be clear, functional, and visually pleasant (not necessarily artistic, but well-organized)
-There should be a basic logic to switch between different game states or views (e.g., Shop / Inventory / Purchase feedback)
-🧠 What We're Evaluating
-Skill
-What We Look For
-Project structure
-Clear separation between logic, data, and presentation
-Scalability and flexibility
-Can new item types or logic be easily added?
-UI and visual design
-Is the UI intuitive, visually organized, and readable?
-Code architecture
-Clean, modular design showing understanding of states, data-driven logic, etc.
-Version Control
-Demonstrates ability to structure commits, write clear messages, and use GitHub professionally
-Polish and finish
-Does it feel complete? Are there signs of testing, iteration, and care?
- */
