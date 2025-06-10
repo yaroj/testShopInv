@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Inventory : GridDisplay
+public class Inventory : MonoBehaviour 
 {
 	public Button prefab;
 	public TMPro.TMP_Text CoinsText;
@@ -15,7 +16,11 @@ public class Inventory : GridDisplay
 	[SerializeField]
 	private int coins;
 
-
+	[Range(1, 8)]
+	public int ColumnCount = 4;
+	public float horizontalOffset = 200;
+	public float verticalOffset = 200;
+	public Vector3 initialPosition = Vector3.zero;
 	public static Inventory Instance { get; private set; }
 
 
@@ -53,6 +58,7 @@ public class Inventory : GridDisplay
 	private void Start()
 	{
 		CloseInventory();
+		Coins = coins;
 	}
 
 	public bool TakeCoins(int count)
@@ -92,11 +98,13 @@ public class Inventory : GridDisplay
 			itemButton.name = item.data.name;
 			itemButton.image.sprite = item.data.icon;
 			shownItems.Add(itemButton);
+			var textComponent = itemButton.GetComponentInChildren<TextMeshProUGUI>();
+			textComponent.text = item.quantity + " " + item.data.itemName;
 		}
 
 
 
-		PlaceButtonsInGrid(shownItems);
+		GridDisplay.PlaceButtonsInGrid(shownItems);
 	}
 	private void CloseInventory()
 	{

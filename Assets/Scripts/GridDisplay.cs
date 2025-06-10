@@ -13,18 +13,19 @@ public class GridDisplay : MonoBehaviour
 	public float verticalOffset = 200;
 	public Vector3 initialPosition = Vector3.zero;
 
-	protected virtual Vector3 GetLocalPosition(int index)
+	public static Vector3 GetLocalPosition(int index, Vector3 initialPosition,  int ColumnCount = 4,  float horizontalOffset = 200,
+	float verticalOffset = 200)
 	{
 		return initialPosition +
 			(index % ColumnCount) * horizontalOffset * Vector3.right +
 			(index / ColumnCount) * verticalOffset * Vector3.up;
 	}
 
-	protected virtual void PlaceButtonsInGrid(List<Button> buttons)
+	public static void PlaceButtonsInGrid(List<Button> buttons)
 	{
 		for (int i = 0; i < buttons.Count; i++)
 		{
-			buttons[i].transform.localPosition = GetLocalPosition(i);
+			buttons[i].transform.localPosition = GetLocalPosition(i, Vector3.zero);
 		}
 	}
 }

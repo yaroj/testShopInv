@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Shop : GridDisplay
+public class Shop : MonoBehaviour
 {
 	private bool isOpened = false;
 	private List<Button> shopItems = new();
@@ -17,7 +17,11 @@ public class Shop : GridDisplay
 	public Button BuyButton;
 
 	public TMP_InputField Description;
-
+	[Range(1, 8)]
+	public int ColumnCount = 4;
+	public float horizontalOffset = 200;
+	public float verticalOffset = 200;
+	public Vector3 initialPosition = Vector3.zero;
 	private void Start()
 	{
 		CloseShop();
@@ -49,14 +53,14 @@ public class Shop : GridDisplay
 			var item = CreateItemUI(itemData);
 			shopItems.Add(item);
 		}
-		PlaceButtonsInGrid(shopItems);
+		GridDisplay.PlaceButtonsInGrid(shopItems);
 	}
 	private Button CreateItemUI(ItemData itemData)
 	{
 		var itemButton = Instantiate(prefab, transform);
 		itemButton.image.sprite = itemData.icon;
 		itemButton.name = itemData.itemName;
-		var textComponent = itemButton.GetComponentInChildren<TMPro.TextMeshProUGUI>();
+		var textComponent = itemButton.GetComponentInChildren<TextMeshProUGUI>();
 		textComponent.text = itemData.itemName;
 		itemButton.onClick.AddListener(() => UpdateBuyingItem(itemData));
 		return itemButton;
