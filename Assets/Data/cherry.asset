@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19ba8b8b1a546294fa09c120e528d037, type: 3}
-  m_Name: cookiesData
+  m_Name: cherry
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: f0749613929af4e16a17c5cab7170730, type: 3}
-  itemName: cookies
-  description: browser cache infestation
-  price: 1
+  icon: {fileID: 0}
+  itemName: 
+  description: 
+  price: 0

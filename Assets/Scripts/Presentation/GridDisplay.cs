@@ -18,14 +18,15 @@ public class GridDisplay : MonoBehaviour
 	{
 		return initialPosition +
 			(index % ColumnCount) * horizontalOffset * Vector3.right +
-			(index / ColumnCount) * verticalOffset * Vector3.up;
+			(index / ColumnCount) * verticalOffset * Vector3.down;
 	}
 
-	public static void PlaceButtonsInGrid(List<Button> buttons)
+	public static void PlaceButtonsInGrid(List<Button> buttons, Vector3 initialPosition, int ColumnCount = 4, float horizontalOffset = 200,
+	float verticalOffset = 200)
 	{
 		for (int i = 0; i < buttons.Count; i++)
 		{
-			buttons[i].transform.localPosition = GetLocalPosition(i, Vector3.zero);
+			buttons[i].transform.localPosition = GetLocalPosition(i, initialPosition, ColumnCount, horizontalOffset, verticalOffset);
 		}
 	}
 }

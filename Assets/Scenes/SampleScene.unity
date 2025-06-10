@@ -183,13 +183,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d304d45ac754ac041ba36c90a054a2a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefab: {fileID: 2065207997521493501, guid: 9b8c81d98ab7c5d44b3ab4628625946c, type: 3}
+  CoinsText: {fileID: 453462259}
+  coins: 350
   ColumnCount: 4
   horizontalOffset: 200
   verticalOffset: 200
   initialPosition: {x: 0, y: 0, z: 0}
-  prefab: {fileID: 2065207997521493501, guid: 9b8c81d98ab7c5d44b3ab4628625946c, type: 3}
-  CoinsText: {fileID: 453462259}
-  coins: 350
 --- !u!1 &389531821
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,9 +461,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 361050835}
-        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
-        m_MethodName: ToggleVisibility
+      - m_Target: {fileID: 961197439}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ToggleInventory
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1232,8 +1232,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1282,6 +1282,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904404183}
   m_CullTransparentMesh: 1
+--- !u!1 &961197438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 961197440}
+  - component: {fileID: 961197439}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &961197439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961197438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2691658cf5e7aa47a435c6af3a534af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &961197440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961197438}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,7 +1514,7 @@ MonoBehaviour:
   m_HideSoftKeyboard: 0
   m_CharacterValidation: 0
   m_RegexValue: 
-  m_GlobalPointSize: 14
+  m_GlobalPointSize: 25
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
@@ -1804,8 +1848,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2115,10 +2159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdee2f145011cc74a86e74963c26ffe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ColumnCount: 4
-  horizontalOffset: 200
-  verticalOffset: 200
-  initialPosition: {x: 0, y: 0, z: 0}
   data:
   - {fileID: 11400000, guid: 2f474888fd7f0aa4fb18dfbe927a7bd0, type: 2}
   - {fileID: 11400000, guid: 127d618ceaef32343b8d5cc741a840c8, type: 2}
@@ -2126,6 +2166,10 @@ MonoBehaviour:
   ShopButton: {fileID: 715607753}
   BuyButton: {fileID: 876814348}
   Description: {fileID: 978975027}
+  ColumnCount: 4
+  horizontalOffset: 200
+  verticalOffset: 200
+  initialPosition: {x: 0, y: 0, z: 0}
 --- !u!222 &1632164272
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2142,3 +2186,4 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 987474079}
   - {fileID: 1000011920}
+  - {fileID: 961197440}

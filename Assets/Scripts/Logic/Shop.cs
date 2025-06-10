@@ -15,45 +15,39 @@ public class Shop : MonoBehaviour
 
 	public GameObject ShopButton;
 	public Button BuyButton;
-
+	const string BUYSTRING = "BUY ";
 	public TMP_InputField Description;
 	[Range(1, 8)]
 	public int ColumnCount = 4;
 	public float horizontalOffset = 200;
 	public float verticalOffset = 200;
 	public Vector3 initialPosition = Vector3.zero;
+	public static Shop Instance { get; private set; }
+
+	private void Awake()
+	{
+		Instance = this;
+	}
 	private void Start()
 	{
 		CloseShop();
 		buyText = BuyButton.GetComponentInChildren<TMP_Text>();
 	}
 
-	public void ToggleVisibility()
-	{
-		isOpened = !isOpened;
-
-		if (isOpened)
-		{
-			OpenShop();
-		}
-		else
-		{
-			CloseShop();
-		}
-
-	}
-
-	private void OpenShop()
+	public void OpenShop()
 	{
 		BuyButton.gameObject.SetActive(true);
 		Description.gameObject.SetActive(true);
+		Description.text = "";
+		buyText.text = BUYSTRING;
 		for (int i = 0; i < data.Count; i++)
 		{
 			ItemData itemData = data[i];
 			var item = CreateItemUI(itemData);
 			shopItems.Add(item);
 		}
-		GridDisplay.PlaceButtonsInGrid(shopItems);
+		print(ColumnCount);
+		GridDisplay.PlaceButtonsInGrid(shopItems, initialPosition, ColumnCount, horizontalOffset, verticalOffset);
 	}
 	private Button CreateItemUI(ItemData itemData)
 	{
@@ -69,7 +63,7 @@ public class Shop : MonoBehaviour
 	private void UpdateBuyingItem(ItemData itemData)
 	{
 		Description.text = itemData.description;
-		buyText.text = "BUY " + itemData.price;
+		buyText.text = BUYSTRING + itemData.price;
 		BuyButton.onClick.RemoveAllListeners();
 		BuyButton.onClick.AddListener(() => BuyItem(itemData));
 	}
@@ -85,7 +79,7 @@ public class Shop : MonoBehaviour
 		}
 	}
 
-	private void CloseShop()
+	public void CloseShop()
 	{
 		BuyButton.gameObject.SetActive(false);
 		Description.gameObject.SetActive(false);
