@@ -6,7 +6,6 @@ using TMPro;
 
 public class Shop : MonoBehaviour
 {
-	private bool isOpened = false;
 	private List<Button> shopItems = new();
 	private TMP_Text buyText;
 	public List<ItemData> data;

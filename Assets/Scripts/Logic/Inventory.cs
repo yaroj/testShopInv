@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour 
 {
-	public Button prefab;
-	public TMP_Text CoinsText;
 
 	private bool isOpened = false;
 
@@ -16,6 +14,8 @@ public class Inventory : MonoBehaviour
 	[SerializeField]
 	private int coins;
 
+	public Button prefab;
+	public TMP_Text CoinsText;
 	[Range(1, 8)]
 	public int ColumnCount = 4;
 	public float horizontalOffset = 200;
