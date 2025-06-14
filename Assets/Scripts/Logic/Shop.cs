@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -45,7 +44,6 @@ public class Shop : MonoBehaviour
 			var item = CreateItemUI(itemData);
 			shopItems.Add(item);
 		}
-		print(ColumnCount);
 		GridDisplay.PlaceButtonsInGrid(shopItems, initialPosition, ColumnCount, horizontalOffset, verticalOffset);
 	}
 	private Button CreateItemUI(ItemData itemData)
@@ -74,7 +72,7 @@ public class Shop : MonoBehaviour
 			Inventory.Instance.AddItem(itemData);
 		}
 		else {
-			print("not enough money");
+			print("not enough coins");
 		}
 	}
 

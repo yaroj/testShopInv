@@ -1,14 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour 
 {
-
-	private bool isOpened = false;
-
 	private Dictionary<string, Item> items = new();
 	private List<Button> shownItems = new();
 	[SerializeField]
@@ -37,7 +33,6 @@ public class Inventory : MonoBehaviour
 			coins = value;
 			if (CoinsText != null)
 			{
-				print(Coins);
 				CoinsText.text = coins.ToString();
 			}
 		}
@@ -74,7 +69,6 @@ public class Inventory : MonoBehaviour
 	public void OpenInventory()
 	{
 		shownItems.Clear();
-		print(items.Count);
 		foreach (KeyValuePair<string, Item> itemEntry in items)
 		{
 			Item item = itemEntry.Value;
