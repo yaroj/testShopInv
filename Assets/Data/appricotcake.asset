@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ba8b8b1a546294fa09c120e528d037, type: 3}
   m_Name: appricotcake
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  itemName: 
-  description: 
-  price: 0
+  icon: {fileID: 21300000, guid: 9804e5484acc6442cbf5b188533ebe48, type: 3}
+  itemName: appricot cake
+  description: cake with appricots
+  price: 20

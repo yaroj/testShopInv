@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19ba8b8b1a546294fa09c120e528d037, type: 3}
   m_Name: multilayerCake
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
-  itemName: 
-  description: 
-  price: 0
+  icon: {fileID: 21300000, guid: 1fdd4fc81ffc94df596878270fd64d73, type: 3}
+  itemName: multilayer
+  description: ' cake with multiple layers'
+  price: 15

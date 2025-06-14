@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19ba8b8b1a546294fa09c120e528d037, type: 3}
-  m_Name: cherry
+  m_Name: testItem
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: db1e320cb547f4a05921a032e69cabcf, type: 3}
-  itemName: cherry
-  description: cake with cherries
-  price: 120
+  icon: {fileID: 21300000, guid: 25974626bde3949bb95d3067307e1cad, type: 3}
+  itemName: colorfull
+  description: colorfull cookies
+  price: 3
